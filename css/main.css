@@ -1,0 +1,122 @@
+/* Heading */
+header {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  padding: 0;
+}
+h1 {
+  font-family: 'Eczar', serif;
+  margin: 0;
+  padding: 10px;
+}
+h1 a, h1 a:visited {
+  color: rgb(255, 255, 255);
+}
+
+/* Links */
+a, a:visited {
+  color: #FF8C00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:active {
+  color: #cc7000;
+}
+
+/* Navigation */
+nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+nav li {
+  flex: 1;
+  list-style: none;
+  text-align: center;
+}
+nav li a {
+  display: block;
+  padding: 10px;
+  white-space: nowrap;
+}
+nav li.highlight a,
+nav li.highlight a:visited {
+  background-color: #FF8C00;
+  color: #ffffff;
+}
+nav li.highlight a:hover {
+  background-color: #cc7000;
+}
+
+/* Main */
+main {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 0 10px;
+}
+
+/* Footer */
+footer {
+  color: rgb(124, 124, 124);
+  font-size: 90%;
+}
+footer ul {
+  margin: 0;
+  padding: 5px 0;
+  text-align: center;
+}
+footer li {
+  display: inline;
+  list-style: none;
+}
+footer li:after {
+  padding: 10px;
+  content: "|";
+}
+footer li:last-child:after {
+  content: "";
+}
+
+@media only screen and (min-width: 500px) {
+  h1 {
+    padding: 0 0 10px 0;
+  }
+  header {
+    padding: 10px 20px;
+  }
+  nav li.highlight a, nav li.highlight a:hover {
+    border-radius: 5px;
+  }
+  main {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Header */
+  #header-container {
+    background: #000;
+  }
+  header {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  h1 {
+    padding: 0;
+  }
+
+  /* Navigation */
+  nav {
+    flex: 1;
+  }
+  nav li {
+    flex: 0;
+    margin: 0 20px;
+  }
+}

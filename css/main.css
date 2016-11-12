@@ -55,7 +55,6 @@ nav li.highlight a:hover {
 /* Main */
 main {
   margin: 0 auto;
-  max-width: 900px;
   padding: 0 10px;
 }
 
@@ -118,5 +117,9 @@ footer li:last-child:after {
   nav li {
     flex: 0;
     margin: 0 20px;
+  }
+  
+  main {
+      max-width: 900px;
   }
 }

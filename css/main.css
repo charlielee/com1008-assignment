@@ -132,6 +132,7 @@ article {
 .gallery #cover img {
   width: auto;
   height: auto;
+  object-fit: cover;
 }
 
 /* Footer */

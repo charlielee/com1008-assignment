@@ -1,6 +1,7 @@
 /* Heading */
 header {
   background-color: rgb(0, 0, 0);
+  box-sizing: border-box;
   color: rgb(255, 255, 255);
   padding: 0;
 }
@@ -70,10 +71,6 @@ main, section, article {
 article {
   padding: 0 10px;
 }
-/*====================
-======================
-=======================
-======================*/
 
 /* Gallery */
 .gallery {
@@ -81,40 +78,53 @@ article {
   flex-flow: row;
   flex-wrap: wrap;
 }
+
 .gallery figure {
   /* Display within gallery */
   flex: 1 1 100%;
-  margin: 0;
   max-height: 200px;
+  margin: 0;
 
   /* Contents of figure */
-  align-items: center;
   display: flex;
-  flex-flow: column-reverse;
+  justify-content: center;
+  flex-flow: column;
   overflow: hidden;
   position: relative;
+
+  background: red;
+}
+
+.gallery figure:nth-of-type(2n) {
+  background: blue;
 }
 .gallery figcaption {
   background: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  width: 100%;
-  height: 50%;
   box-sizing: border-box;
-  overflow-y: hidden;
+  margin: 0 2.5%;
+  top: 50%;
+  position: absolute;
+  text-align: center;
+  width: 95%;
 }
 .gallery figure img {
-  border: solid 1px #000000;
+  height: 100%;
 }
 
 .gallery #cover {
-  min-width: 100%;
+  max-width: 100%;
   max-height: 300px;
 }
 .gallery #cover figcaption {
+  border-radius: 10px;
+  height: 60%;
+  max-width: 500px;
   padding: 0 10px;
-  height: 100%;
   text-align: center;
+  top: 20%;
+/*  width: auto;*/
 }
+
 .gallery #cover img {
 }
 
@@ -161,20 +171,17 @@ footer li:last-child:after {
   .gallery #cover figcaption {
     padding: 0 20px;
   }
-  article {
-    padding: 0 20px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
   /* Max widths */
   main {
-    max-width: 1200px;
-  }
-  article {
     max-width: 900px;
   }
-  
+  header, article {
+    max-width: 900px;
+  }
+
   /* Header */
   #header-container {
     background: #000;
@@ -182,7 +189,6 @@ footer li:last-child:after {
   header {
     display: flex;
     flex-flow: row wrap;
-    max-width: 900px;
     margin: 0 auto;
   }
   h1 {
@@ -204,11 +210,5 @@ footer li:last-child:after {
   .gallery figure {
      max-width: 33%;
   }
-  .gallery #cover figcaption {
-    border-radius: 10px;
-    width: auto;
-/*    max-width: 60%;*/
-    height: 60%;
-    top: 20%;
-  }
+
 }

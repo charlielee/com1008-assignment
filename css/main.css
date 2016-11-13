@@ -113,16 +113,20 @@ article {
 .gallery figcaption {
   background: rgba(255, 255, 255, 0.7);
   box-sizing: border-box;
-  top: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  padding: 10px 20px;
   position: absolute;
   text-align: center;
+  top: calc(50%-10px);
   width: 100%;
 
-  /* Fixes caption positioning (FIREFOX ONLY) */
+  /* Fix caption positioning (FIREFOX ONLY) */
   left: 50%;
   transform: translate(-50%, 0);
 }
-.gallery figure img {
+.gallery img {
   width: 100%;
 }
 
@@ -132,14 +136,12 @@ article {
 }
 .gallery #cover figcaption {
   background-color: transparent;
-  height: 100%;
   text-align: left;
-  top: 10px;
+  top: 0;
 }
 .gallery #cover span {
   background-color: rgba(255, 255, 255, 0.7);
   font-family: "Coming Soon", cursive;
-  font-size: 2em;
   line-height: 1.85em;
   padding: 5px;
 }
@@ -190,7 +192,7 @@ footer li:last-child:after {
     padding: 0 20px;
   }
   .gallery #cover span {
-    font-size: 2.5em;
+    font-size: 1.3em;
   }
 }
 
@@ -237,8 +239,9 @@ footer li:last-child:after {
   }
   .gallery #cover figcaption {
     max-width: 900px;
+    top: 20px;
   }
   .gallery #cover span {
-    font-size: 3em;
+    font-size: 1.6em;
   }
 }

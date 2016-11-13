@@ -5,45 +5,6 @@
   Last updated: 13/11/16
 */
 
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-  padding-bottom: 10px;
-}
-h1 a, h1 a:visited {
-  color: rgb(255, 255, 255);
-}
-h1 span, h2 span {
-  margin-right: 10px;
-}
-h2 {
-  font-family: "Montserrat", sans-serif;
-}
-
-.logo {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-}
-.logo .fa-coffee {
-  margin-right: 5px;
-}
-
-/* Header */
-#header-container {
-  background: #000;
-}
-header {
-  box-sizing: border-box;
-  color: #fff;
-  /* Center the header */
-  margin: 0 auto;
-  padding-top: 10px;
-}
-header h1 {
-  margin: 0;
-  text-align: center;
-}
-
 /* Links */
 a, a:visited {
   color: #ff8c00;
@@ -54,6 +15,51 @@ a:hover {
 }
 a:active {
   color: #cc7000;
+}
+
+/* Headings */
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+}
+h1 a, h1 a:visited {
+  color: #fff;
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Logo */
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.logo .fa-coffee::after {
+  /* Creates a space after the logo symbol relative to font-size */
+  color: transparent;
+  content: "-";
+}
+
+/* Header */
+#header-container {
+  background: rgb(0,83,133);
+}
+header {
+  /* Center the header */
+  margin: 0 auto;
+}
+header h1 {
+  background-color: rgb(0,0,0);
+  margin: 0;
+  text-align: center;
+}
+header h1 a {
+  display: block;
+  padding: 10px;
+}
+header h1 a:hover {
+  background-color: rgb(40,40,40);
+  text-decoration: none;
 }
 
 /* Navigation */
@@ -70,21 +76,14 @@ nav li {
   text-align: center;
 }
 nav li a {
+  color: #fff !important;
   display: block;
   padding: 10px;
   white-space: nowrap;
 }
-nav li.highlight a,
-nav li.highlight a:visited {
-  background-color: #ff8c00;
-  color: #fff;
-}
-nav li.highlight a:hover {
-  background-color: #cc7000;
-  text-decoration: none;
-}
-nav li.highlight a:active {
-  text-decoration: underline;
+nav li.highlight {
+  /* Promotional nav item is hidden on very small devices */
+  display: none;
 }
 
 /* Content */
@@ -93,7 +92,7 @@ article {
   padding: 10px;
 }
 #company {
-  background-color: #444;
+  background-color: #556270;
   color: #fff;
 }
 
@@ -102,6 +101,7 @@ article {
   display: flex;
   flex-flow: row;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 .gallery figure {
   background: #000;
@@ -118,8 +118,7 @@ article {
   overflow: hidden;
 }
 .gallery figcaption {
-  background: rgba(255, 255, 255, 0.7);
-  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.7);
   font-family: "Montserrat", sans-serif;
   font-size: 2em;
   font-weight: 600;
@@ -132,6 +131,16 @@ article {
   /* Fix caption positioning (FIREFOX ONLY) */
   left: 50%;
   transform: translate(-50%, 0);
+}
+/* Make captions switch between 3 different colors */
+.gallery figure:nth-of-type(3n+1) figcaption {
+  background-color: rgba(189,213,55,0.7);
+}
+.gallery figure:nth-of-type(3n+2) figcaption {
+  background-color: rgba(215,18,139,0.7);
+}
+.gallery figure:nth-of-type(3n+3) figcaption {
+  background-color: rgba(0,83,133,0.7);
 }
 .gallery img {
   width: 100%;
@@ -182,12 +191,26 @@ footer li:last-child:after {
 
 @media only screen and (min-width: 500px) {
   /* Header */
-  header {
+  nav ul {
     padding: 10px;
   }
-  nav li.highlight a, nav li.highlight a:hover {
+  /* Promotional nav item */
+  nav li.highlight {
+    display: block;
+  }
+  nav li.highlight a {
+    background-color: rgb(215,18,139);
     border-radius: 5px;
   }
+  nav li.highlight a:hover {
+    background-color: rgb(255,58,179);
+    text-decoration: none;
+  }
+  nav li.highlight a:active {
+    text-decoration: underline;
+  }
+
+  /* Gallery */
   .gallery figure {
      max-width: 50%;
   }
@@ -205,25 +228,30 @@ footer li:last-child:after {
 
 @media only screen and (min-width: 768px) {
   /* Max widths */
-  header, article, .gallery {
-    box-sizing: border-box;
+  header, article {
     max-width: 900px;
-    margin: 0 auto;
   }
   .gallery {
     max-width: 1200px;
+  }
+
+  /* Headings */
+   h1 {
+    font-size: 2em;
+    padding: 0;
   }
 
   /* Header */
   header {
     display: flex;
     flex-flow: row wrap;
-    padding: 10px 20px;
+    padding: 0 20px;
   }
-  h1 {
-    font-size: 2em;
-    padding: 0;
+  header h1 {
+    margin: 0;
   }
+
+  /* Content */
   article {
     padding: 20px;
   }

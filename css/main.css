@@ -1,5 +1,5 @@
 /*!
-  Style sheet for COM1008 Assignment
+  Main style sheet for COM1008 Assignment
   Author: Charles Lee
   Created: 09/11/16
   Last updated: 13/11/16
@@ -54,13 +54,14 @@ h2 {
 
 /* ===Logo=== */
 .logo {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Merriweather', serif;
   font-weight: 600;
 }
 .logo .fa-coffee::after {
   /* Creates a space after the logo symbol relative to font-size */
   color: transparent;
   content: "-";
+  text-shadow: none;
 }
 
 /* 1.2. PRIMARY
@@ -173,6 +174,7 @@ footer li:last-child:after {
 .gallery {
   display: flex;
   flex-flow: row;
+  justify-content: space-between;
   flex-wrap: wrap;
   margin: 0 auto;
 }
@@ -181,15 +183,15 @@ footer li:last-child:after {
 .gallery figure {
   background: rgb(0,0,0);
   border-width: 5px;
-  border-style: none none none solid;
+  border-left-style: solid;
   box-sizing: border-box;
   flex: 1 1 100%;
   max-height: 150px;
-  margin: 0;
+  margin: 0 0 10px 0;
   overflow: hidden;
   position: relative;
 }
-/* Gallery item borders switch between 3 different colors */
+/* Gallery item borders switch between 3 colors */
 .gallery figure:nth-of-type(3n+1) {
   border-color: rgb(189,213,55);
 }
@@ -202,12 +204,12 @@ footer li:last-child:after {
 
 /* Entire gallery item is within an anchor */
 .gallery figure a {
+  align-items: center;
   /* Flexbox to allow image overflow to crop equally on all sides */
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
   flex-flow: column;
+  height: 100%;
+  justify-content: center;
   width: 100%;
 }
 .gallery figure a:active {
@@ -216,12 +218,14 @@ footer li:last-child:after {
 
 /* Gallery item text is in a figcaption */
 .gallery figcaption {
+  box-shadow: inset -1px 0px 50px 1px rgb(222,222,222);
   color: rgb(255,255,255);
   font-family: "Montserrat", sans-serif;
   font-size: 2em;
   font-weight: 600;
   height: 100%;
   left: 0;
+  margin: 0;
   position: absolute;
   text-align: left;
   text-shadow: 1px 1px rgb(40,40,40);
@@ -229,11 +233,15 @@ footer li:last-child:after {
   transition: background-color ease-out 0.2s;
   width: 100%;
 }
+.gallery figcaption:hover {
+  box-shadow: none;
+}
 .gallery figcaption h2 {
   display: inline;
-  font-size: 1em;
-  line-height: 1.5;
-  padding: 5px 7px 5px 0;
+  font-size: 0.6em;
+  line-height: 1.8;
+  padding: 7px 7px 7px 0;
+  vertical-align: top;
   white-space: pre-wrap;
 }
 
@@ -251,7 +259,7 @@ footer li:last-child:after {
   background-color: transparent;
 }
 
-/* Gallery items' text's background colors switches between 3 different colors */
+/* Background color of gallery items text switches between 3 colors */
 .gallery figure:nth-of-type(3n+1) h2 {
   background-color: rgb(189,213,55);
 }
@@ -262,7 +270,7 @@ footer li:last-child:after {
   background-color: rgb(0,83,133);
 }
 
-
+/* ===Call to action buttons===*/
 .gallery figure div {
   background-color: rgb(0,171,202);
   border-radius: 10px;
@@ -291,6 +299,7 @@ footer li:last-child:after {
   max-width: 100%;
 }
 .gallery #cover figcaption {
+  box-shadow: none;
   color: rgb(0,0,0);
   text-align: left;
   text-shadow: none;
@@ -298,7 +307,7 @@ footer li:last-child:after {
 .gallery #cover span {
   background-color: rgba(255, 255, 255, 0.7);
   font-family: "Coming Soon", cursive;
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.6em;
   padding: 0 10px;
 }
@@ -330,7 +339,7 @@ footer li:last-child:after {
   .gallery figure {
      max-height: 200px;
     /* 2 columns in gallery */
-     max-width: 50%;
+     max-width: 49%;
   }
   .gallery figure figcaption {
     /* Required to keep text above images when transform property is applied to them */
@@ -360,6 +369,7 @@ footer li:last-child:after {
 
   h1 {
     font-size: 2em;
+    margin: 1em 0;
     padding: 0;
   }
 
@@ -368,7 +378,7 @@ footer li:last-child:after {
 
   article {
     max-width: 900px;
-    padding: 20px;
+    padding: 10px 20px;
   }
 
   /* 3.3. HEADER
@@ -407,7 +417,7 @@ footer li:last-child:after {
   }
   .gallery figure {
     /* 3 columns in gallery */
-    max-width: calc(100%*1/3);
+    max-width: 32.5%;
   }
   .gallery figure img {
     width: 100%;

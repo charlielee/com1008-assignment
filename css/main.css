@@ -5,31 +5,54 @@
   Last updated: 13/11/16
 */
 
-/* Links */
+/* ================================
+   0.0. CSS DIRECTORY
+   ================================
+   1.0. INITIAL BREAKPOINT (Smartphone portrait)
+        1.1. GENERAL
+        1.2. PRIMARY
+        1.3. HEADER
+        1.4. NAVIGATION
+        1.5. FOOTER
+        1.6. HOMEPAGE GALLERY
+
+   2.0. SMARTPHONE LANDSCAPE/SMALL TABLET BREAKPOINT (min-width: 500px)
+        2.1. NAVIGATION
+        2.2. HOME PAGE GALLERY
+
+   3.0. DESKTOP BREAKPOINT (min-width: 768px)
+        3.1. GENERAL
+        3.2. PRIMARY
+        3.3. HEADER
+        3.4. NAVIGATION
+        3.5. HOMEPAGE GALLERY
+*/
+
+/* ================================
+   1.0. INITIAL BREAKPOINT (Smartphone portrait)
+   ================================ */
+
+/* 1.1. GENERAL
+   -------------------------------- */
+
+/* ===Links=== */
 a, a:visited {
   color: rgb(0,171,202);
   text-decoration: none;
 }
-a:hover {
-  text-decoration: underline;
-}
-a:active {
-  color: rgb(2,214,252);
-}
+a:hover { text-decoration: underline; }
+a:active { color: rgb(2,214,252); }
 
-/* Headings */
+/* ===Headings=== */
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
-}
-h1 a, h1 a:visited {
-  color: rgb(255,255,255);
 }
 h2 {
   font-family: "Montserrat", sans-serif;
 }
 
-/* Logo */
+/* ===Logo=== */
 .logo {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -40,7 +63,21 @@ h2 {
   content: "-";
 }
 
-/* Header */
+/* 1.2. PRIMARY
+   -------------------------------- */
+
+article {
+  margin: 0 auto;
+  padding: 10px;
+}
+#company {
+  background-color: #556270;
+  color: #fff;
+}
+
+/* 1.3. HEADER
+   -------------------------------- */
+
 #header-container {
   background: rgb(0,83,133);
 }
@@ -54,6 +91,7 @@ header h1 {
   text-align: center;
 }
 header h1 a {
+  color: rgb(255,255,255) !important;
   display: block;
   padding: 10px;
 }
@@ -62,7 +100,9 @@ header h1 a:hover {
   text-decoration: none;
 }
 
-/* Navigation */
+/* 1.4. NAVIGATION
+   -------------------------------- */
+
 nav ul {
   display: flex;
   flex-flow: row wrap;
@@ -102,150 +142,9 @@ nav li.highlight a:active {
   text-decoration: underline;
 }
 
-/* Content */
-article {
-  margin: 0 auto;
-  padding: 10px;
-}
-#company {
-  background-color: #556270;
-  color: #fff;
-}
+/* 1.5. FOOTER
+   -------------------------------- */
 
-/* Gallery */
-.gallery {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-.gallery figure {
-  background: rgb(0,0,0);
-  border-width: 5px;
-  border-style: none none none solid;
-  box-sizing: border-box;
-  flex: 1 1 100%;
-  max-height: 150px;
-  margin: 0;
-  overflow: hidden;
-/*  outline: solid 5px rgb(0,0,0);*/
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-flow: column;
-}
-.gallery figcaption {
-  color: rgb(255,255,255);
-  font-family: "Montserrat", sans-serif;
-  font-size: 2em;
-  font-weight: 600;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  text-align: left;
-  text-shadow: 1px 1px rgb(40,40,40);
-  transition: background-color ease-out 0.2s;
-  top: 0;
-  width: 100%;
-}
-.gallery figcaption h2 {
-  display: inline;
-  font-size: 1em;
-  line-height: 1.5;
-  padding: 5px 7px 5px 0;
-  white-space: pre-wrap;
-}
-
-/* Make borderswitch between 3 different colors */
-.gallery figure:nth-of-type(3n+1) {
-  border-color: rgb(189,213,55);
-}
-.gallery figure:nth-of-type(3n+2) {
-  border-color: rgb(215,18,139);
-}
-.gallery figure:nth-of-type(3n+3) {
-  border-color: rgb(0,83,133);
-}
-
-/* Make captions switch between 3 different colors */
-.gallery figure:nth-of-type(3n+1) h2 {
-  background-color: rgb(189,213,55);
-}
-.gallery figure:nth-of-type(3n+2) h2 {
-  background-color: rgb(215,18,139);
-}
-.gallery figure:nth-of-type(3n+3) h2 {
-  background-color: rgb(0,83,133);
-}
-
-.gallery figure a {
-  display: block;
-  height: 100%;
-  width: 100%;
-}
-.gallery figure a:active {
-  opacity: 0.85;
-}
-/* Hover color matches background color */
-.gallery figure:nth-of-type(3n+1) figcaption:hover {
-  background-color: rgba(189,213,55,0.85);
-}
-.gallery figure:nth-of-type(3n+2) figcaption:hover {
-  background-color: rgba(215,18,139,0.85);
-}
-.gallery figure:nth-of-type(3n+3) figcaption:hover {
-  background-color: rgba(0,83,133,0.85);
-}
-.gallery figure:first-of-type figcaption:hover {
-  background-color: transparent;
-}
-
-.gallery figure div {
-  background-color: rgb(0,171,202);
-  border-radius: 10px;
-  bottom: 0;
-  font-size: 0.7em;
-  margin: 10px;
-  padding: 10px;
-  position: absolute;
-  right: 0;
-}
-.gallery figure div:hover {
-  background-color: rgb(2,214,252);
-}
-.gallery figure div::after {
-  content: " >";
-  vertical-align: middle;
-}
-.gallery figure img {
-  width: 100%;
-}
-
-/* Cover gallery item */
-.gallery #cover {
-  border: 0;
-  max-height: 250px;
-  max-width: 100%;
-}
-.gallery #cover figcaption {
-  color: rgb(0,0,0);
-  text-align: left;
-  text-shadow: none;
-}
-.gallery #cover span {
-  background-color: rgba(255, 255, 255, 0.7);
-  font-family: "Coming Soon", cursive;
-  font-size: 1.2em;
-  line-height: 1.6em;
-  padding: 0 10px;
-}
-.gallery #cover img {
-  width: 1200px;
-  height: auto;
-}
-
-/* Footer */
 footer {
   color: rgb(124, 124, 124);
   font-size: 90%;
@@ -268,8 +167,155 @@ footer li:last-child:after {
   content: "";
 }
 
+/* 1.6. HOME PAGE GALLERY
+   -------------------------------- */
+
+.gallery {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+/* Each gallery item is a figure */
+.gallery figure {
+  background: rgb(0,0,0);
+  border-width: 5px;
+  border-style: none none none solid;
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  max-height: 150px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+/* Gallery item borders switch between 3 different colors */
+.gallery figure:nth-of-type(3n+1) {
+  border-color: rgb(189,213,55);
+}
+.gallery figure:nth-of-type(3n+2) {
+  border-color: rgb(215,18,139);
+}
+.gallery figure:nth-of-type(3n+3) {
+  border-color: rgb(0,83,133);
+}
+
+/* Entire gallery item is within an anchor */
+.gallery figure a {
+  /* Flexbox to allow image overflow to crop equally on all sides */
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  width: 100%;
+}
+.gallery figure a:active {
+  opacity: 0.85;
+}
+
+/* Gallery item text is in a figcaption */
+.gallery figcaption {
+  color: rgb(255,255,255);
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  font-weight: 600;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: left;
+  text-shadow: 1px 1px rgb(40,40,40);
+  top: 0;
+  transition: background-color ease-out 0.2s;
+  width: 100%;
+}
+.gallery figcaption h2 {
+  display: inline;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 5px 7px 5px 0;
+  white-space: pre-wrap;
+}
+
+/* Gallery items' color on hover switches between 3 colors */
+.gallery figure:nth-of-type(3n+1) figcaption:hover {
+  background-color: rgba(189,213,55,0.85);
+}
+.gallery figure:nth-of-type(3n+2) figcaption:hover {
+  background-color: rgba(215,18,139,0.85);
+}
+.gallery figure:nth-of-type(3n+3) figcaption:hover {
+  background-color: rgba(0,83,133,0.85);
+}
+.gallery figure:first-of-type figcaption:hover {
+  background-color: transparent;
+}
+
+/* Gallery items' text's background colors switches between 3 different colors */
+.gallery figure:nth-of-type(3n+1) h2 {
+  background-color: rgb(189,213,55);
+}
+.gallery figure:nth-of-type(3n+2) h2 {
+  background-color: rgb(215,18,139);
+}
+.gallery figure:nth-of-type(3n+3) h2 {
+  background-color: rgb(0,83,133);
+}
+
+
+.gallery figure div {
+  background-color: rgb(0,171,202);
+  border-radius: 10px;
+  bottom: 0;
+  font-size: 0.7em;
+  margin: 10px;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+.gallery figure div:hover {
+  background-color: rgb(2,214,252);
+}
+.gallery figure div::after {
+  content: " >";
+  vertical-align: middle;
+}
+.gallery figure img {
+  width: 100%;
+}
+
+/* ===Cover gallery item=== */
+.gallery #cover {
+  border: 0;
+  max-height: 250px;
+  max-width: 100%;
+}
+.gallery #cover figcaption {
+  color: rgb(0,0,0);
+  text-align: left;
+  text-shadow: none;
+}
+.gallery #cover span {
+  background-color: rgba(255, 255, 255, 0.7);
+  font-family: "Coming Soon", cursive;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  padding: 0 10px;
+}
+.gallery #cover img {
+  width: 1200px;
+  height: auto;
+}
+
+/* ================================
+   2.0. SMARTPHONE LANDSCAPE/SMALL TABLET BREAKPOINT
+   ================================ */
+
 @media only screen and (min-width: 500px) {
-  /* Header */
+
+  /* 2.1. NAVIGATION
+     -------------------------------- */
+
   nav ul {
     padding: 10px;
   }
@@ -278,9 +324,12 @@ footer li:last-child:after {
     display: block;
   }
 
-  /* Gallery */
+  /* 2.2. HOME PAGE GALLERY
+   -------------------------------- */
+
   .gallery figure {
      max-height: 200px;
+    /* 2 columns in gallery */
      max-width: 50%;
   }
   .gallery figure figcaption {
@@ -293,42 +342,52 @@ footer li:last-child:after {
     /* Images scaled to reduce letterboxing */
     transform: scale(1.3, 1.3);
   }
+
+  /* Increase cover image font-size */
   .gallery #cover span {
     font-size: 1.5em;
   }
 }
 
-@media only screen and (min-width: 768px) {
-  /* Max widths */
-  header, article {
-    max-width: 900px;
-  }
-  .gallery {
-    max-width: 1200px;
-  }
+/* ================================
+   3.0. DESKTOP BREAKPOINT
+   ================================ */
 
-  /* Headings */
-   h1 {
+@media only screen and (min-width: 768px) {
+
+  /* 3.1. GENERAL
+   -------------------------------- */
+
+  h1 {
     font-size: 2em;
     padding: 0;
   }
 
-  /* Header */
+  /* 3.2. PRIMARY
+   -------------------------------- */
+
+  article {
+    max-width: 900px;
+    padding: 20px;
+  }
+
+  /* 3.3. HEADER
+   -------------------------------- */
+
   header {
     display: flex;
+    /* Moves header contents onto one row */
     flex-flow: row wrap;
+    max-width: 900px;
     padding: 0 20px;
   }
   header h1 {
     margin: 0;
   }
 
-  /* Content */
-  article {
-    padding: 20px;
-  }
+  /* 3.4. NAVIGATION
+   -------------------------------- */
 
-  /* Navigation */
   nav {
     flex: 1;
   }
@@ -340,8 +399,14 @@ footer li:last-child:after {
     margin: 0;
   }
 
-  /* Create 3 columns in gallery */
+  /* 3.5. HOME PAGE GALLERY
+   -------------------------------- */
+
+  .gallery {
+    max-width: 1200px;
+  }
   .gallery figure {
+    /* 3 columns in gallery */
     max-width: calc(100%*1/3);
   }
   .gallery figure img {
@@ -352,10 +417,13 @@ footer li:last-child:after {
     margin: 0 auto;
     max-width: 900px;
     top: 20px;
+    width: 100%;
+    /* Centers cover image text */
     left: 50%;
     transform: translate(-50%, 0);
-    width: 100%;
   }
+
+  /* Increase cover image font-size */
   .gallery #cover span {
     font-size: 1.7em;
   }

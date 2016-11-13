@@ -23,9 +23,8 @@
    3.0. DESKTOP BREAKPOINT (min-width: 768px)
         3.1. GENERAL
         3.2. PRIMARY
-        3.3. HEADER
-        3.4. NAVIGATION
-        3.5. HOMEPAGE GALLERY
+        3.3. NAVIGATION
+        3.4. HOMEPAGE GALLERY
 */
 
 /* ================================
@@ -82,30 +81,36 @@ section.dark {
 /* 1.3. HEADER
    -------------------------------- */
 
-#header-container {
-  background: rgb(0,83,133);
-}
 header {
-  /* Center the header */
-  margin: 0 auto;
-}
-header h1 {
-  background-color: rgb(0,0,0);
-  margin: 0;
-  text-align: center;
-}
-header h1 a {
-  color: rgb(255,255,255) !important;
-  display: block;
-  padding: 10px;
-}
-header h1 a:hover {
-  background-color: rgb(40,40,40);
-  text-decoration: none;
+  background: rgb(0,83,133);
 }
 
 /* 1.4. NAVIGATION
    -------------------------------- */
+
+nav {
+  /* Center the header */
+  margin: 0 auto;
+}
+nav h1 {
+  background-color: rgb(0,0,0);
+  margin: 0;
+  text-align: center;
+}
+
+nav a {
+  color: rgb(255,255,255);
+  display: block;
+  padding: 10px;
+  text-shadow: 1px 1px rgb(40,40,40);
+  white-space: nowrap;
+}
+nav a:visited { color: rgb(255,255,255); }
+nav a:active { color: rgb(222,222,222); }
+nav h1 a:hover {
+  background-color: rgb(30,30,30);
+  text-decoration: none;
+}
 
 nav ul {
   display: flex;
@@ -119,16 +124,8 @@ nav li {
   list-style: none;
   text-align: center;
 }
-nav li a {
-  color: rgb(255,255,255) !important;
-  display: block;
-  text-shadow: 1px 1px rgb(40,40,40);
-  padding: 10px;
-  white-space: nowrap;
-}
-nav li a:active {
-  color: rgb(222,222,222) !important;
-}
+
+/* === Highlighted nav items === */
 nav li.highlight {
   /* Promotional nav item is hidden on small devices */
   display: none;
@@ -142,7 +139,7 @@ nav li.highlight a:hover {
   text-decoration: none;
 }
 nav li.highlight a:active {
-  color: rgb(255,255,255) !important;
+  color: rgb(255,255,255);
   text-decoration: underline;
 }
 
@@ -355,7 +352,7 @@ footer li:last-child:after {
     transform: scale(1.3, 1.3);
   }
 
-  /* Increase cover image font-size */
+  /* ===Cover gallery item=== */
   .gallery #cover span {
     font-size: 1.5em;
   }
@@ -387,24 +384,20 @@ footer li:last-child:after {
     padding: 10px 20px;
   }
 
-  /* 3.3. HEADER
-   -------------------------------- */
-
-  header {
-    display: flex;
-    /* Moves header contents onto one row */
-    flex-flow: row wrap;
-    max-width: 900px;
-    padding: 0 20px;
-  }
-  header h1 {
-    margin: 0;
-  }
-
-  /* 3.4. NAVIGATION
+  /* 3.3. NAVIGATION
    -------------------------------- */
 
   nav {
+     display: flex;
+    /* Moves header contents onto one row */
+    flex-flow: row wrap;
+    padding: 0 20px;
+    max-width: 900px;
+  }
+  nav h1 {
+    margin: 0;
+  }
+  nav ul {
     flex: 1;
   }
   nav li {
@@ -415,7 +408,7 @@ footer li:last-child:after {
     margin: 0;
   }
 
-  /* 3.5. HOME PAGE GALLERY
+  /* 3.4. HOME PAGE GALLERY
    -------------------------------- */
 
   .gallery {
@@ -429,6 +422,8 @@ footer li:last-child:after {
     width: 100%;
     height: auto;
   }
+
+  /* ===Cover gallery item=== */
   .gallery #cover figcaption {
     margin: 0 auto;
     max-width: 900px;
@@ -438,8 +433,6 @@ footer li:last-child:after {
     left: 50%;
     transform: translate(-50%, 0);
   }
-
-  /* Increase cover image font-size */
   .gallery #cover span {
     font-size: 1.7em;
   }

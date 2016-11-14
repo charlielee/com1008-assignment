@@ -298,6 +298,9 @@ footer li:last-child:after {
   max-height: 250px;
   max-width: 100%;
 }
+.gallery #cover a:active {
+  opacity: 1;
+}
 .gallery #cover figcaption {
   box-shadow: none;
   color: rgb(0,0,0);

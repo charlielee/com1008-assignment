@@ -36,11 +36,9 @@
 
 /* ===Links=== */
 a, a:visited {
-  color: rgb(0,171,202);
-  text-decoration: none;
+  color: rgb(11,114,132);
 }
-a:hover { text-decoration: underline; }
-a:active { color: rgb(2,214,252); }
+a:hover { color: rgb(4,81,94); }
 
 /* ===Headings=== */
 h1 {
@@ -71,8 +69,8 @@ article {
   padding: 10px;
 }
 section.dark {
-  background-color: #556270;
-  color: #fff;
+  background-color: rgb(85,98,112);
+  color: rgb(255,255,255);
 }
 .italics {
   font-style: italic;
@@ -102,11 +100,12 @@ nav a {
   color: rgb(255,255,255);
   display: block;
   padding: 10px;
+  text-decoration: none;
   text-shadow: 1px 1px rgb(40,40,40);
   white-space: nowrap;
 }
 nav a:visited { color: rgb(255,255,255); }
-nav a:active { color: rgb(222,222,222); }
+nav a:hover { color: rgb(212,212,212); }
 nav h1 a:hover {
   background-color: rgb(30,30,30);
   text-decoration: none;
@@ -136,18 +135,15 @@ nav li.highlight a {
 }
 nav li.highlight a:hover {
   background-color: rgb(255,58,179);
-  text-decoration: none;
-}
-nav li.highlight a:active {
   color: rgb(255,255,255);
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* 1.5. FOOTER
    -------------------------------- */
 
 footer {
-  color: rgb(124, 124, 124);
+  color: rgb(85,98,112);
   font-size: 90%;
   padding: 20px;
 }
@@ -193,7 +189,7 @@ footer li:last-child:after {
 }
 /* Gallery item borders switch between 3 colors */
 .gallery figure:nth-of-type(3n+1) {
-  border-color: rgb(189,213,55);
+  border-color: rgb(33,123,22);
 }
 .gallery figure:nth-of-type(3n+2) {
   border-color: rgb(215,18,139);
@@ -247,7 +243,7 @@ footer li:last-child:after {
 
 /* Gallery items' color on hover switches between 3 colors */
 .gallery figure:nth-of-type(3n+1) figcaption:hover {
-  background-color: rgba(189,213,55,0.85);
+  background-color: rgba(33,123,22,0.85);
 }
 .gallery figure:nth-of-type(3n+2) figcaption:hover {
   background-color: rgba(215,18,139,0.85);
@@ -261,7 +257,7 @@ footer li:last-child:after {
 
 /* Background color of gallery items text switches between 3 colors */
 .gallery figure:nth-of-type(3n+1) h2 {
-  background-color: rgb(189,213,55);
+  background-color: rgb(33,123,22);
 }
 .gallery figure:nth-of-type(3n+2) h2 {
   background-color: rgb(215,18,139);

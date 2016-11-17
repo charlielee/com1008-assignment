@@ -2,7 +2,7 @@
   Main style sheet for COM1008 Assignment
   Author: Charles Lee
   Created: 09/11/16
-  Last updated: 13/11/16
+  Last updated: 17/11/16
 */
 
 /* ================================
@@ -175,144 +175,113 @@ footer li:last-child:after {
   margin: 0 auto;
 }
 
-/* Each gallery item is a figure */
-.gallery figure {
-  background: rgb(0,0,0);
+/* Each gallery item is a article */
+.gallery article {
+  background-color: rgb(0,0,0);
+  background-position: center;
   border-width: 5px;
   border-left-style: solid;
+  box-shadow: inset -1px 0px 50px 1px rgb(222,222,222);
   box-sizing: border-box;
   flex: 1 1 100%;
-  max-height: 150px;
+  height: 150px;
   margin: 0 0 10px 0;
   overflow: hidden;
+  padding: 0;
   position: relative;
 }
 /* Gallery item borders switch between 3 colors */
-.gallery figure:nth-of-type(3n+1) {
+.gallery article:nth-of-type(3n+1) {
   border-color: rgb(33,123,22);
 }
-.gallery figure:nth-of-type(3n+2) {
+.gallery article:nth-of-type(3n+2) {
   border-color: rgb(215,18,139);
 }
-.gallery figure:nth-of-type(3n+3) {
+.gallery article:nth-of-type(3n+3) {
   border-color: rgb(0,83,133);
 }
 
-/* Entire gallery item is within an anchor */
-.gallery figure a {
-  align-items: center;
-  /* Flexbox to allow image overflow to crop equally on all sides */
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-  justify-content: center;
-  width: 100%;
-}
-.gallery figure a:active {
-  opacity: 0.85;
-}
-
-/* Gallery item text is in a figcaption */
-.gallery figcaption {
-  box-shadow: inset -1px 0px 50px 1px rgb(222,222,222);
+.gallery h2 {
+  box-sizing: border-box;
   color: rgb(255,255,255);
-  font-family: "Montserrat", sans-serif;
-  font-size: 2em;
-  font-weight: 600;
-  height: 100%;
-  left: 0;
-  margin: 0;
-  position: absolute;
-  text-align: left;
-  text-shadow: 1px 1px rgb(40,40,40);
-  top: 0;
-  transition: background-color ease-out 0.2s;
-  width: 100%;
-}
-.gallery figcaption:hover {
-  box-shadow: none;
-}
-.gallery figcaption h2 {
   display: inline;
-  font-size: 0.6em;
   line-height: 1.8;
   padding: 7px 7px 7px 0;
+  text-shadow: 1px 1px rgb(40,40,40);
+  transition: background-color ease-out 0.2s;
   vertical-align: top;
   white-space: pre-wrap;
 }
-
-/* Gallery items' color on hover switches between 3 colors */
-.gallery figure:nth-of-type(3n+1) figcaption:hover {
-  background-color: rgba(33,123,22,0.85);
+.gallery a {
+  color: rgb(255,255,255);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
-.gallery figure:nth-of-type(3n+2) figcaption:hover {
-  background-color: rgba(215,18,139,0.85);
+.gallery a:active {
+  opacity: 0.85;
 }
-.gallery figure:nth-of-type(3n+3) figcaption:hover {
-  background-color: rgba(0,83,133,0.85);
-}
-.gallery figure:first-of-type figcaption:hover {
-  background-color: transparent;
-}
-
-/* Background color of gallery items text switches between 3 colors */
-.gallery figure:nth-of-type(3n+1) h2 {
-  background-color: rgb(33,123,22);
-}
-.gallery figure:nth-of-type(3n+2) h2 {
-  background-color: rgb(215,18,139);
-}
-.gallery figure:nth-of-type(3n+3) h2 {
-  background-color: rgb(0,83,133);
-}
-
-/* ===Call to action buttons===*/
-.gallery figure div {
+.gallery a span {
   background-color: rgb(0,171,202);
   border-radius: 10px;
   bottom: 0;
-  font-size: 0.7em;
   margin: 10px;
   padding: 10px;
   position: absolute;
   right: 0;
 }
-.gallery figure div:hover {
-  background-color: rgb(2,214,252);
+.gallery a span:hover {
+  box-shadow: 0px 0px 10px 3px rgb(0,171,202);
 }
-.gallery figure div::after {
+.gallery a span::after {
   content: " >";
   vertical-align: middle;
 }
-.gallery figure img {
-  width: 100%;
+/* Gallery items' color on hover switches between 3 colors */
+.gallery article:nth-of-type(3n+1) {
+  background-color: rgb(33,123,22);
+}
+.gallery article:nth-of-type(3n+2) {
+  background-color: rgb(215,18,139);
+}
+.gallery article:nth-of-type(3n+3) {
+  background-color: rgb(0,83,133);
+}
+.gallery article:hover:not(.cover) {
+  background-image: none !important;
+  box-shadow: none;
+}
+
+/* Background color of gallery items text switches between 3 colors */
+.gallery article:nth-of-type(3n+1) h2 {
+  background-color: rgb(33,123,22);
+}
+.gallery article:nth-of-type(3n+2) h2 {
+  background-color: rgb(215,18,139);
+}
+.gallery article:nth-of-type(3n+3) h2 {
+  background-color: rgb(0,83,133);
 }
 
 /* ===Cover gallery item=== */
-.gallery #cover {
+.gallery article.cover {
   border: 0;
-  max-height: 250px;
-  max-width: 100%;
-}
-.gallery #cover a:active {
-  opacity: 1;
-}
-.gallery #cover figcaption {
   box-shadow: none;
-  color: rgb(0,0,0);
-  text-align: left;
-  text-shadow: none;
+  height: auto;
+  max-width: 100%;
+  padding: 2.5% 0;
 }
-.gallery #cover span {
+
+.gallery article.cover h2 {
   background-color: rgba(255, 255, 255, 0.7);
+  color: rgb(0,0,0);
   font-family: "Coming Soon", cursive;
-  font-size: 1.1em;
+  font-size: 2em;
   line-height: 1.6em;
   padding: 0 10px;
-}
-.gallery #cover img {
-  width: 1200px;
-  height: auto;
+  text-shadow: none;
 }
 
 /* ================================
@@ -335,28 +304,15 @@ footer li:last-child:after {
   /* 2.2. HOME PAGE GALLERY
    -------------------------------- */
 
-  .gallery figure {
-     max-height: 200px;
+  .gallery article {
+     height: 180px;
     /* 2 columns in gallery */
      max-width: 49%;
   }
-  .gallery figure figcaption {
-    /* Required to keep text above images when transform property is applied to them */
-    z-index: 1;
-  }
-  .gallery figure img {
-    width: auto;
-    height: 100%;
-    /* Images scaled to reduce letterboxing */
-    transform: scale(1.3, 1.3);
-  }
 
   /* ===Cover gallery item=== */
-  .gallery #cover span {
-    font-size: 1.5em;
-  }
-  .gallery #cover img {
-    transform: none;
+  .gallery article.cover h2 {
+    font-size: 2.5em;
   }
 }
 
@@ -390,7 +346,6 @@ footer li:last-child:after {
      display: flex;
     /* Moves header contents onto one row */
     flex-flow: row wrap;
-    padding: 0 20px;
     max-width: 900px;
   }
   nav h1 {
@@ -413,26 +368,17 @@ footer li:last-child:after {
   .gallery {
     max-width: 1200px;
   }
-  .gallery figure {
+  .gallery article {
     /* 3 columns in gallery */
     max-width: 32.5%;
   }
-  .gallery figure img {
-    width: 100%;
-    height: auto;
-  }
 
   /* ===Cover gallery item=== */
-  .gallery #cover figcaption {
+  .gallery article.cover h2 {
+    display: block;
+    font-size: 3em;
     margin: 0 auto;
     max-width: 900px;
-    top: 20px;
     width: 100%;
-    /* Centers cover image text */
-    left: 50%;
-    transform: translate(-50%, 0);
-  }
-  .gallery #cover span {
-    font-size: 1.7em;
   }
 }

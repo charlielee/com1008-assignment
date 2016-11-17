@@ -16,7 +16,7 @@
 /* ================================
    1.0. INITIAL BREAKPOINT (Smartphone portrait)
    ================================ */
-#cover {
+#welcome {
   background-image: url("../img/dominoes.jpg");
 }
 #block-slider-3 {
@@ -36,6 +36,10 @@
 }
 #reviews {
   background-image: url("../img/tea3.jpg");
+}
+
+#founders {
+  background-image: url("../img/checkers.jpg");
 }
 
 

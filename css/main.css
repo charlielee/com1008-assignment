@@ -41,24 +41,12 @@ a, a:visited {
 a:hover { color: rgb(4,81,94); }
 
 /* ===Headings=== */
-h1 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5em;
-}
-h2 {
+h1, h2 {
   font-family: "Montserrat", sans-serif;
 }
 
-/* ===Logo=== */
-.logo {
-  font-family: 'Merriweather', serif;
-  font-weight: 600;
-}
-.logo .fa-coffee::after {
-  /* Creates a space after the logo symbol relative to font-size */
-  color: transparent;
-  content: "-";
-  text-shadow: none;
+img {
+  max-width: 100%;
 }
 
 /* 1.2. PRIMARY
@@ -68,7 +56,7 @@ article {
   margin: 0 auto;
   padding: 10px;
 }
-section.dark {
+.dark {
   background-color: rgb(85,98,112);
   color: rgb(255,255,255);
 }
@@ -79,8 +67,31 @@ section.dark {
 /* 1.3. HEADER
    -------------------------------- */
 
-header {
+header:nth-of-type(1) {
   background: rgb(0,83,133);
+}
+header:nth-of-type(2) {
+  background: rgb(0,0,0);
+}
+
+/* ===Logo=== */
+#logo {
+  background-color: rgb(0,0,0);
+  font-family: 'Merriweather', serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+#logo .fa-coffee::after {
+  /* Creates a space after the logo symbol relative to font-size */
+  color: transparent;
+  content: "-";
+  text-shadow: none;
+}
+#logo a:hover {
+  background-color: rgb(30,30,30);
+  text-decoration: none;
 }
 
 /* 1.4. NAVIGATION
@@ -90,12 +101,6 @@ nav {
   /* Center the header */
   margin: 0 auto;
 }
-nav h1 {
-  background-color: rgb(0,0,0);
-  margin: 0;
-  text-align: center;
-}
-
 nav a {
   color: rgb(255,255,255);
   display: block;
@@ -106,10 +111,6 @@ nav a {
 }
 nav a:visited { color: rgb(255,255,255); }
 nav a:hover { color: rgb(212,212,212); }
-nav h1 a:hover {
-  background-color: rgb(30,30,30);
-  text-decoration: none;
-}
 
 nav ul {
   display: flex;
@@ -157,8 +158,8 @@ footer li {
   list-style: none;
 }
 footer li:after {
-  padding: 0 10px;
   content: "|";
+  padding: 0 10px;
 }
 footer li:last-child:after {
   content: "";
@@ -170,8 +171,8 @@ footer li:last-child:after {
 .gallery {
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   margin: 0 auto;
 }
 
@@ -179,9 +180,9 @@ footer li:last-child:after {
 .gallery article {
   background-color: rgb(0,0,0);
   background-position: center;
-  border-width: 5px;
   border-left-style: solid;
-  box-shadow: inset -1px 0px 50px 1px rgb(222,222,222);
+  border-width: 5px;
+  box-shadow: inset -1px 0 50px 1px rgb(222,222,222);
   box-sizing: border-box;
   flex: 1 1 100%;
   height: 150px;
@@ -205,6 +206,8 @@ footer li:last-child:after {
   box-sizing: border-box;
   color: rgb(255,255,255);
   display: inline;
+  font-size: 1.5em;
+  font-weight: 600;
   line-height: 1.8;
   padding: 7px 7px 7px 0;
   text-shadow: 1px 1px rgb(40,40,40);
@@ -233,7 +236,7 @@ footer li:last-child:after {
   right: 0;
 }
 .gallery a span:hover {
-  box-shadow: 0px 0px 10px 3px rgb(0,171,202);
+  box-shadow: 0 0 10px 3px rgb(0,171,202);
 }
 .gallery a span::after {
   content: " >";
@@ -274,8 +277,10 @@ footer li:last-child:after {
   padding: 2.5% 0;
 }
 
-.gallery article.cover h2 {
-  background-color: rgba(255, 255, 255, 0.7);
+.gallery article.cover h1 {
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.7);
+  box-sizing: border-box;
   color: rgb(0,0,0);
   font-family: "Coming Soon", cursive;
   font-size: 2em;
@@ -311,7 +316,7 @@ footer li:last-child:after {
   }
 
   /* ===Cover gallery item=== */
-  .gallery article.cover h2 {
+  .gallery article.cover h1 {
     font-size: 2.5em;
   }
 }
@@ -325,10 +330,8 @@ footer li:last-child:after {
   /* 3.1. GENERAL
    -------------------------------- */
 
-  h1 {
+  #logo {
     font-size: 2em;
-    margin: 1em 0;
-    padding: 0;
   }
 
   /* 3.2. PRIMARY
@@ -347,9 +350,6 @@ footer li:last-child:after {
     /* Moves header contents onto one row */
     flex-flow: row wrap;
     max-width: 900px;
-  }
-  nav h1 {
-    margin: 0;
   }
   nav ul {
     flex: 1;
@@ -374,7 +374,7 @@ footer li:last-child:after {
   }
 
   /* ===Cover gallery item=== */
-  .gallery article.cover h2 {
+  .gallery article.cover h1 {
     display: block;
     font-size: 3em;
     margin: 0 auto;

@@ -8,6 +8,7 @@
 /* ================================
    0.0. CSS DIRECTORY
    ================================
+
    1.0. INITIAL BREAKPOINT (Smartphone portrait)
         1.1. GENERAL
         1.2. PRIMARY
@@ -17,14 +18,16 @@
         1.6. HOMEPAGE GALLERY
 
    2.0. SMARTPHONE LANDSCAPE/SMALL TABLET BREAKPOINT (min-width: 500px)
-        2.1. NAVIGATION
-        2.2. HOME PAGE GALLERY
+        2.1. HEADER
+        2.2. NAVIGATION
+        2.3. HOME PAGE GALLERY
 
    3.0. DESKTOP BREAKPOINT (min-width: 768px)
         3.1. GENERAL
         3.2. PRIMARY
-        3.3. NAVIGATION
-        3.4. HOMEPAGE GALLERY
+        3.3. HEADER
+        3.4. NAVIGATION
+        3.5. HOMEPAGE GALLERY
 */
 
 /* ================================
@@ -67,11 +70,8 @@ article {
 /* 1.3. HEADER
    -------------------------------- */
 
-header:nth-of-type(1) {
-  background: rgb(0,83,133);
-}
-header:nth-of-type(2) {
-  background: rgb(0,0,0);
+header {
+  background-color: rgb(0,83,133);
 }
 
 /* ===Logo=== */
@@ -92,6 +92,29 @@ header:nth-of-type(2) {
 #logo a:hover {
   background-color: rgb(30,30,30);
   text-decoration: none;
+}
+
+main header {
+  background-position: center;
+  border: 0;
+  box-shadow: none;
+  height: auto;
+  margin: 0 auto 10px auto;
+  max-width: 100%;
+  padding: 2.5% 0;
+}
+
+main header h1 {
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.7);
+  box-sizing: border-box;
+  color: rgb(0,0,0);
+  font-family: "Coming Soon", cursive;
+  font-size: 2em;
+  line-height: 1.6em;
+  margin: 0 auto;
+  padding: 0 10px;
+  text-shadow: none;
 }
 
 /* 1.4. NAVIGATION
@@ -268,34 +291,20 @@ footer li:last-child:after {
   background-color: rgb(0,83,133);
 }
 
-/* ===Cover gallery item=== */
-.gallery article.cover {
-  border: 0;
-  box-shadow: none;
-  height: auto;
-  max-width: 100%;
-  padding: 2.5% 0;
-}
-
-.gallery article.cover h1 {
-  background-color: rgb(255,255,255);
-  background-color: rgba(255,255,255,0.7);
-  box-sizing: border-box;
-  color: rgb(0,0,0);
-  font-family: "Coming Soon", cursive;
-  font-size: 2em;
-  line-height: 1.6em;
-  padding: 0 10px;
-  text-shadow: none;
-}
-
 /* ================================
    2.0. SMARTPHONE LANDSCAPE/SMALL TABLET BREAKPOINT
    ================================ */
 
 @media only screen and (min-width: 500px) {
 
-  /* 2.1. NAVIGATION
+  /* 2.1. HEADER
+     -------------------------------- */
+
+  main header h1 {
+    font-size: 2.5em;
+  }
+
+  /* 2.2. NAVIGATION
      -------------------------------- */
 
   nav ul {
@@ -306,18 +315,13 @@ footer li:last-child:after {
     display: block;
   }
 
-  /* 2.2. HOME PAGE GALLERY
+  /* 2.3. HOME PAGE GALLERY
    -------------------------------- */
 
   .gallery article {
      height: 180px;
     /* 2 columns in gallery */
      max-width: 49%;
-  }
-
-  /* ===Cover gallery item=== */
-  .gallery article.cover h1 {
-    font-size: 2.5em;
   }
 }
 
@@ -342,7 +346,18 @@ footer li:last-child:after {
     padding: 10px 20px;
   }
 
-  /* 3.3. NAVIGATION
+  /* 3.3. HEADER
+   -------------------------------- */
+
+  main header {
+    max-width: 1200px;
+  }
+
+  main header h1 {
+    max-width: 900px;
+  }
+
+  /* 3.4. NAVIGATION
    -------------------------------- */
 
   nav {
@@ -362,7 +377,7 @@ footer li:last-child:after {
     margin: 0;
   }
 
-  /* 3.4. HOME PAGE GALLERY
+  /* 3.5. HOME PAGE GALLERY
    -------------------------------- */
 
   .gallery {
@@ -371,14 +386,5 @@ footer li:last-child:after {
   .gallery article {
     /* 3 columns in gallery */
     max-width: 32.5%;
-  }
-
-  /* ===Cover gallery item=== */
-  .gallery article.cover h1 {
-    display: block;
-    font-size: 3em;
-    margin: 0 auto;
-    max-width: 900px;
-    width: 100%;
   }
 }

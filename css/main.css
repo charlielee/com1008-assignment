@@ -98,21 +98,18 @@ header {
 }
 
 main header {
+  background-color: transparent;
   background-position: center;
-  border: 0;
   box-shadow: none;
   height: auto;
   margin: 0 auto;
   max-width: 100%;
-  padding: 10px 0;
 }
 
 main header h1 {
-  background-color: rgb(255,255,255);
   background-color: rgba(255,255,255,0.85);
   box-sizing: border-box;
   color: rgb(0,0,0);
-/*  font-family: "Delius", cursive;*/
   font-size: 2em;
   line-height: 1.6em;
   margin: 0 auto;
@@ -156,7 +153,7 @@ main header nav ul {
   justify-content: flex-start;
 }
 main header nav a {
-/*  text-decoration: underline;*/
+  background-color: rgba(85,98,112,0.85);
 }
 
 /* === Highlighted nav items === */
@@ -362,6 +359,7 @@ footer li:last-child:after {
 
   main header {
     max-width: 1200px;
+    padding-bottom: 10px;
   }
 
   main header h1 {

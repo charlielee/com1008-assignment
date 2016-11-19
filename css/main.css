@@ -59,6 +59,9 @@ article {
   margin: 0 auto;
   padding: 10px;
 }
+aside {
+/*  background-color: rgb(85,98,112);*/
+}
 .dark {
   background-color: rgb(85,98,112);
   color: rgb(255,255,255);
@@ -99,17 +102,17 @@ main header {
   border: 0;
   box-shadow: none;
   height: auto;
-  margin: 0 auto 10px auto;
+  margin: 0 auto;
   max-width: 100%;
-  padding: 2.5% 0;
+  padding: 10px 0;
 }
 
 main header h1 {
   background-color: rgb(255,255,255);
-  background-color: rgba(255,255,255,0.7);
+  background-color: rgba(255,255,255,0.85);
   box-sizing: border-box;
   color: rgb(0,0,0);
-  font-family: "Coming Soon", cursive;
+/*  font-family: "Delius", cursive;*/
   font-size: 2em;
   line-height: 1.6em;
   margin: 0 auto;
@@ -146,6 +149,14 @@ nav li {
   flex: 1;
   list-style: none;
   text-align: center;
+}
+
+/* === 2nd level navigation */
+main header nav ul {
+  justify-content: flex-start;
+}
+main header nav a {
+/*  text-decoration: underline;*/
 }
 
 /* === Highlighted nav items === */
@@ -196,7 +207,7 @@ footer li:last-child:after {
   flex-flow: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 10px auto 0 auto;
 }
 
 /* Each gallery item is a article */
@@ -375,6 +386,11 @@ footer li:last-child:after {
   }
   nav li:last-of-type {
     margin: 0;
+  }
+
+  /* === 2nd level navigation */
+  main header nav ul {
+    padding: 10px 0 0 0;
   }
 
   /* 3.5. HOME PAGE GALLERY

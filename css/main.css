@@ -38,6 +38,13 @@
 /* 1.1. GENERAL
    -------------------------------- */
 
+body {
+  font-family: "Roboto", sans-serif;
+}
+p {
+  line-height: 1.3em;
+}
+
 /* ===Links=== */
 a, a:visited {
   color: rgb(11,114,132);
@@ -61,7 +68,6 @@ article {
   padding: 10px;
 }
 article img {
-  margin-bottom: 10px;
   width: 100%;
 }
 
@@ -76,6 +82,7 @@ article img {
 /* 1.3. HEADER
    -------------------------------- */
 
+/* ===Global header===*/
 header {
   background-color: rgb(0,83,133);
 }
@@ -100,6 +107,7 @@ header {
   text-decoration: none;
 }
 
+/* ===Page header=== */
 main header {
   background-color: transparent;
   background-position: center;
@@ -108,7 +116,6 @@ main header {
   margin: 0 auto;
   max-width: 100%;
 }
-
 main header h1 {
   background-color: rgba(255,255,255,0.85);
   box-sizing: border-box;
@@ -118,6 +125,24 @@ main header h1 {
   margin: 0 auto;
   padding: 0 10px;
   text-shadow: none;
+}
+
+/* ===Article header===*/
+article header ul {
+  padding: 0;
+}
+article header li {
+  color: rgb(85,98,112);
+  display: inline;
+  font-size: 0.9em;
+  list-style: none;
+}
+article header li:after {
+  content: "|";
+  padding: 0 7px;
+}
+article header li:last-child:after {
+  content: "";
 }
 
 /* 1.4. NAVIGATION

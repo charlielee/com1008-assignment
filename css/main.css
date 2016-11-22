@@ -73,6 +73,9 @@ article img {
   width: 100%;
 }
 
+.alt {
+  display: none;
+}
 .dark {
   background-color: rgb(85,98,112);
   color: rgb(255,255,255);
@@ -80,6 +83,7 @@ article img {
 .italics {
   font-style: italic;
 }
+
 .item {
   border-left: 5px solid rgb(0,0,0);
 }
@@ -370,7 +374,7 @@ footer li:last-child:after {
 
 /* ===REVIEWS=== */
 #reviews {
-  background-image: url("../img/tea3.jpg");
+  background-image: url("../img/reviews.png");
 }
 
 /* ===COMPANY SECTION=== */
@@ -403,7 +407,7 @@ footer li:last-child:after {
 
   /* ===Article headers === */
   article header li {
-    display: inline;
+    display: inline-block;
   }
   article header li:after {
     content: "|";

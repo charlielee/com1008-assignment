@@ -48,12 +48,17 @@
       <article>
         <h1>Contact</h1>
         <p>Get in touch with us via the form below.</p>
-        <form name="contact" action="">
+        <form name="contact" action="http://www.dcs.shef.ac.uk/cgi-intranet/public/FormMail.pl" method="get">
           <label for="GET-name">Name:</label>
-          <input id="GET-name" type="text" name="name" maxlength="40" size="20">
+          <input id="GET-name" type="text" name="name" maxlength="40" size="20" required>
           <label for="GET-email">Email:</label>
-          <input id="GET-email" type="text" name="email" maxlength="40" size="20">
+          <input id="GET-email" type="email" name="email" maxlength="40" size="20" required>
           <select name=""> </select>
+          <input type="submit" value="Submit">
+          <input type="hidden" name="recipient"
+value="crjlee1@sheffield.ac.uk">
+          <input type=hidden name="return_link_url" value="http://charlielee.uk">
+          <input type=hidden name="return_link_title" value="Back to Main Page">
         </form>
       </article>
     </div>

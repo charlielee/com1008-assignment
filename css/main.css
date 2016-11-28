@@ -61,7 +61,7 @@ h1, h2 {
 
 main div {
   clear: both;
-  overflow: hidden;
+/*  overflow: hidden;*/
 }
 article {
   clear: both;
@@ -195,7 +195,7 @@ nav li {
   text-align: center;
 }
 
-/* === 2nd level navigation */
+/* ===2nd level navigation=== */
 main header nav ul {
   justify-content: flex-start;
 }
@@ -203,7 +203,7 @@ main header nav a {
   background-color: rgba(85,98,112,0.85);
 }
 
-/* === Highlighted nav items === */
+/* ===Highlighted nav items=== */
 nav li.highlight {
   /* Promotional nav item is hidden on small devices */
   display: none;
@@ -392,11 +392,11 @@ footer li:last-child:after {
   /* 2.1. PRIMARY
      -------------------------------- */
 
-  article img {
+/*  article img {
     float: right;
     margin: 0 0 10px 10px;
     max-width: 50%;
-  }
+  } */
 
   /* 2.2. HEADERS
      -------------------------------- */
@@ -453,8 +453,8 @@ footer li:last-child:after {
     max-width: 900px;
     padding: 0 20px;
   }
-  article img {
-    max-width: 300px;
+  section {
+    flex: 1;
   }
 
   /* 3.2. HEADERS
@@ -474,7 +474,19 @@ footer li:last-child:after {
   }
 
   /* ===Article headers=== */
+  article.item {
+    display: flex;
+    margin: 20px auto;
+  }
   article header {
+    width: 200px;
+    padding-right: 20px;
+  }
+  article header li {
+    display: block;
+  }
+  article header li:after {
+    content: "";
     padding: 0;
   }
 

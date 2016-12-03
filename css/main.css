@@ -166,6 +166,15 @@ main header h1 {
   text-shadow: none;
 }
 
+/* ===Hero headers===*/
+.hero div {
+  margin: 10% auto;
+}
+.hero h1 {
+  display: inline;
+  font-family: "Coming Soon", cursive;
+}
+
 /* 1.4. NAVIGATION
    -------------------------------- */
 
@@ -212,10 +221,6 @@ nav a {
 nav a:visited { color: rgb(255,255,255); }
 nav a:hover { color: rgb(212,212,212); }
 
-nav li a {
-    background-color: rgb(0,83,133);
-
-}
 /* ===Highlighted nav items=== */
 nav li.highlight:nth-of-type(2n+1) a {
   background-color: rgb(33,123,22);
@@ -499,6 +504,14 @@ footer li:last-child:after {
   }
   main header h1 {
     max-width: 900px;
+  }
+
+  /* ===Hero headers===*/
+  .hero div {
+    max-width: 900px;
+  }
+  .hero h1 {
+    font-size: 3em;
   }
 
   /* 3.3. NAVIGATION

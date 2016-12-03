@@ -196,14 +196,6 @@ nav a {
 nav a:visited { color: rgb(255,255,255); }
 nav a:hover { color: rgb(212,212,212); }
 
-/* ===2nd level navigation=== */
-main header nav ul {
-  justify-content: flex-start;
-}
-main header nav a {
-  background-color: rgba(85,98,112,0.85);
-}
-
 /* ===Highlighted nav items=== */
 nav li.highlight {
   /* Promotional nav item is hidden on small devices */
@@ -510,11 +502,6 @@ footer li:last-child:after {
   }
   nav li:last-of-type {
     margin: 0;
-  }
-
-  /* === 2nd level navigation */
-  main header nav ul {
-    padding: 10px 0 0 0;
   }
 
   /* 3.4. HOME PAGE GALLERY

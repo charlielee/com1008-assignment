@@ -169,16 +169,31 @@ main header h1 {
 /* 1.4. NAVIGATION
    -------------------------------- */
 
+#mobile-menu-toggle {
+  color: rgb(255,255,255);
+  font-size: 1.5em;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+#mobile-menu-toggle:hover {
+  color: rgb(212,212,212);
+  cursor: pointer;
+}
+
 nav {
   /* Center the nav bar */
   margin: 0 auto;
 }
 nav ul {
-  display: flex;
+  display: none;
   flex-flow: row wrap;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
+}
+.visible {
+  display: flex;
 }
 nav li {
   flex: 1 100%;
@@ -197,6 +212,10 @@ nav a {
 nav a:visited { color: rgb(255,255,255); }
 nav a:hover { color: rgb(212,212,212); }
 
+nav li a {
+    background-color: rgb(0,83,133);
+
+}
 /* ===Highlighted nav items=== */
 nav li.highlight:nth-of-type(2n+1) a {
   background-color: rgb(33,123,22);
@@ -400,6 +419,10 @@ footer li:last-child:after {
 
   /* 2.3. NAVIGATION
      -------------------------------- */
+  #mobile-menu-toggle {
+    display: none;
+  }
+
   nav ul {
     display: flex;
     flex-flow: row wrap;

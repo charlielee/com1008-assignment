@@ -74,12 +74,14 @@ main div {
 
 /* ===Articles=== */
 article {
-  clear: both;
   margin: 0 auto;
+  /* Prevents margin collapsing */
+  overflow: hidden;
   padding: 0 10px;
 }
 article img {
   box-shadow: 1px 0 10px 1px rgb(85,98,112);
+  margin: 1em 0;
   width: 100%;
 }
 
@@ -450,10 +452,9 @@ footer li:last-child:after {
     max-width: 900px;
     padding: 0 20px;
   }
-  article.item {
+  article.with-sidebar {
     display: flex;
     flex-wrap: wrap;
-    margin: 20px auto;
   }
   aside {
     width: 200px;

@@ -151,7 +151,7 @@ header {
 
 /* ===Page header=== */
 main header {
-  background-color: transparent;
+  background-color: rgb(85,98,112);
   background-position: center;
   margin: 0 auto;
   overflow: hidden;
@@ -364,7 +364,7 @@ footer li:last-child:after {
 
 /* ===HOME PAGE=== */
 #welcome {
-  background-image: url("../img/dominoes.jpg");
+  background-image: url("../img/welcome.jpg");
 }
 
 /* ===GAMES=== */
@@ -375,24 +375,29 @@ footer li:last-child:after {
   background-image: url("../img/tea2.jpg");
 }
 #spot-difference {
-  background-image: url("../img/tea3.jpg");
+  background-image: url("../img/spot-the-difference.png");
 }
 #tic-tac-toe {
   background-image: url("../img/tea1.jpg");
 }
 #cat-teapot {
-  background-image: url("../img/tea2.jpg");
+  background-image: url("../img/cat.jpg");
 }
 
 /* ===REVIEWS=== */
 #reviews {
-  background-image: url("../img/reviews.png");
+  background-image: url("../img/reviews.jpg");
 }
 
-/* ===COMPANY SECTION=== */
-#our-company {
+/* ===ABOUT=== */
+#about {
   background-color: rgb(202,135,26);
   background-image: url("../img/checkers.jpg");
+}
+
+/* ===NEWS=== */
+#news {
+  background-image: url("../img/news.jpg")
 }
 
 /* ================================
@@ -477,7 +482,7 @@ footer li:last-child:after {
     flex-wrap: wrap;
   }
   aside {
-    width: 200px;
+    width: 250px;
     padding-right: 20px;
   }
   aside li {
@@ -511,7 +516,8 @@ footer li:last-child:after {
     max-width: 900px;
   }
   .hero h1 {
-    font-size: 3em;
+    font-size: 3.5em;
+    white-space: pre-wrap;
   }
 
   /* 3.3. NAVIGATION
@@ -524,10 +530,12 @@ footer li:last-child:after {
     max-width: 900px;
   }
   nav ul {
+    display: block;
     flex: 1;
+    text-align: right;
   }
   nav li {
-    flex: 0;
+    display: inline-block;
     margin: 0 20px 0 0;
   }
   nav li:last-of-type {

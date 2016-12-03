@@ -66,6 +66,8 @@ h1, h2 {
 
 main div {
   clear: both;
+  /* Prevents margin collapsing */
+  overflow: hidden;
 }
 .dark {
   background-color: rgb(85,98,112);
@@ -75,8 +77,6 @@ main div {
 /* ===Articles=== */
 article {
   margin: 0 auto;
-  /* Prevents margin collapsing */
-  overflow: hidden;
   padding: 0 10px;
 }
 article img {
@@ -88,6 +88,7 @@ article img {
 /* ===Articles with ".item" alternate between 3 different color accents=== */
 .item {
   border-left: 5px solid rgb(0,0,0);
+  margin: 2em auto;
 }
 .item:nth-of-type(3n+1) {
   border-color: rgb(33,123,22);
@@ -97,6 +98,10 @@ article img {
 }
 .item:nth-of-type(3n+3) {
   border-color: rgb(0,83,133);
+}
+
+.item h2 {
+  margin-top: 0;
 }
 .item:nth-of-type(3n+1) h2 {
   color: rgb(33,123,22);

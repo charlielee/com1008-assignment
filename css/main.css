@@ -180,7 +180,7 @@ nav ul {
   padding: 0;
 }
 nav li {
-  flex: 1;
+  flex: 1 100%;
   list-style: none;
   text-align: center;
 }
@@ -197,18 +197,11 @@ nav a:visited { color: rgb(255,255,255); }
 nav a:hover { color: rgb(212,212,212); }
 
 /* ===Highlighted nav items=== */
-nav li.highlight {
-  /* Promotional nav item is hidden on small devices */
-  display: none;
+nav li.highlight:nth-of-type(2n+1) a {
+  background-color: rgb(33,123,22);
 }
-nav li.highlight a {
+nav li.highlight:nth-of-type(2n+2) a {
   background-color: rgb(215,18,139);
-  border-radius: 5px;
-}
-nav li.highlight a:hover {
-  background-color: rgb(255,58,179);
-  color: rgb(255,255,255);
-  text-decoration: none;
 }
 
 /* 1.5. FOOTER
@@ -413,13 +406,21 @@ footer li:last-child:after {
 
   /* 2.3. NAVIGATION
      -------------------------------- */
-
   nav ul {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin: 0;
     padding: 10px;
   }
-  /* Display promotional nav item */
-  nav li.highlight {
-    display: block;
+  nav li {
+    flex: 1;
+    margin: 0 10px 0 0;
+  }
+
+  /* ===Highlighted nav items=== */
+  nav li.highlight a {
+    border-radius: 5px;
   }
 
   /* 2.4. HOME PAGE GALLERY

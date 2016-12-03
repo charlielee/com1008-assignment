@@ -154,13 +154,14 @@ main header {
   background-color: transparent;
   background-position: center;
   margin: 0 auto;
+  overflow: hidden;
 }
 main header h1 {
   background-color: rgba(255,255,255,0.85);
   box-sizing: border-box;
   font-size: 2em;
   line-height: 1.6em;
-  margin: 0 auto;
+  margin: 10vh auto 0 auto;
   padding: 0 10px;
   text-shadow: none;
 }
@@ -379,20 +380,6 @@ footer li:last-child:after {
   /* 2.1. PRIMARY
      -------------------------------- */
 
-/*  article img {
-    float: right;
-    margin: 0 0 10px 10px;
-    max-width: 50%;
-  } */
-
-  /* 2.2. HEADERS
-     -------------------------------- */
-
-  main header h1 {
-    font-size: 2.5em;
-  }
-
-  /* ===Article headers === */
   aside li {
     display: inline-block;
   }
@@ -402,6 +389,13 @@ footer li:last-child:after {
   }
   aside li:last-child:after {
     content: "";
+  }
+
+  /* 2.2. HEADERS
+     -------------------------------- */
+
+  main header h1 {
+    font-size: 2.5em;
   }
 
   /* 2.3. NAVIGATION
@@ -479,7 +473,6 @@ footer li:last-child:after {
   /* ===Page header=== */
   main header {
     max-width: 1200px;
-    padding-bottom: 10px;
   }
   main header h1 {
     max-width: 900px;

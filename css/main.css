@@ -96,13 +96,13 @@ article img {
 .item:nth-of-type(3n+3) {
   border-color: rgb(0,83,133);
 }
-.item:nth-of-type(3n+1) header h2 {
+.item:nth-of-type(3n+1) h2 {
   color: rgb(33,123,22);
 }
-.item:nth-of-type(3n+2) header h2 {
+.item:nth-of-type(3n+2) h2 {
   color: rgb(215,18,139);
 }
-.item:nth-of-type(3n+3) header h2 {
+.item:nth-of-type(3n+3) h2 {
   color: rgb(0,83,133);
 }
 
@@ -155,10 +155,8 @@ main header h1 {
 }
 
 /* ===Article headers===*/
-article header ul {
+aside ul {
   padding: 0;
-}
-article header li {
   color: rgb(85,98,112);
   font-size: 0.9em;
   list-style: none;
@@ -406,14 +404,14 @@ footer li:last-child:after {
   }
 
   /* ===Article headers === */
-  article header li {
+  aside li {
     display: inline-block;
   }
-  article header li:after {
+ aside li:after {
     content: "|";
     padding: 0 7px;
   }
-  article header li:last-child:after {
+  aside li:last-child:after {
     content: "";
   }
 
@@ -448,10 +446,28 @@ footer li:last-child:after {
 
   /* 3.1. PRIMARY
    -------------------------------- */
-
+  article h2 {
+    width: 100%;
+  }
   article {
     max-width: 900px;
     padding: 0 20px;
+  }
+  article.item {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px auto;
+  }
+  aside {
+    width: 200px;
+    padding-right: 20px;
+  }
+  aside li {
+    display: block;
+  }
+  aside li:after {
+    content: "";
+    padding: 0;
   }
   section {
     flex: 1;
@@ -471,23 +487,6 @@ footer li:last-child:after {
   }
   main header h1 {
     max-width: 900px;
-  }
-
-  /* ===Article headers=== */
-  article.item {
-    display: flex;
-    margin: 20px auto;
-  }
-  article header {
-    width: 200px;
-    padding-right: 20px;
-  }
-  article header li {
-    display: block;
-  }
-  article header li:after {
-    content: "";
-    padding: 0;
   }
 
   /* 3.3. NAVIGATION

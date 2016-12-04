@@ -13,3 +13,4 @@ function toggleMenu() {
     menuList.classList.add("visible");
   }
 }
+

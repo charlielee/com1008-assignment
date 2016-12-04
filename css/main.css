@@ -61,6 +61,21 @@ h1, h2 {
   display: none;
 }
 
+/* ===Forms===*/
+input, label, textarea {
+  box-sizing: border-box;
+  display: block;
+  margin: 1em 0;
+  padding: 10px;
+  width: 100%;
+}
+textarea {
+  resize: vertical;
+}
+input[type="submit"] {
+  width: auto;
+}
+
 /* 1.2. PRIMARY
    -------------------------------- */
 
@@ -72,6 +87,15 @@ main div {
 .dark {
   background-color: rgb(85,98,112);
   color: rgb(255,255,255);
+}
+.notice {
+  background-color: rgb(215,18,139);
+  border-radius: 5px;
+  color: rgb(255,255,255);
+  padding: 10px 20px;
+}
+.hidden {
+  display: none;
 }
 
 /* ===Articles=== */
@@ -153,7 +177,7 @@ header {
 main header {
   background-color: rgb(85,98,112);
   background-position: center;
-  margin: 0 auto;
+  margin: 0 auto 1em auto;
   overflow: hidden;
 }
 main header h1 {
@@ -403,7 +427,12 @@ footer li:last-child:after {
 
 /* ===NEWS=== */
 #news {
-  background-image: url("../img/news.jpg")
+  background-image: url("../img/news.jpg");
+}
+
+/* ===CONTACT=== */
+#contact {
+  background-image: url("../img/contact.jpg");
 }
 
 /* ================================
@@ -491,9 +520,12 @@ footer li:last-child:after {
     display: flex;
     flex-wrap: wrap;
   }
+  .with-sidebar section:last-child, .with-sidebar aside:last-child {
+    padding-left: 20px;
+  }
+
   aside {
     width: 250px;
-    padding-right: 20px;
   }
   aside li {
     display: block;

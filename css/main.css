@@ -173,36 +173,22 @@ main header h1 {
 .hero h1 {
   display: inline;
   font-family: "Coming Soon", cursive;
+  white-space: pre-wrap;
 }
 
 /* 1.4. NAVIGATION
    -------------------------------- */
-
-#mobile-menu-toggle {
-  color: rgb(255,255,255);
-  font-size: 1.5em;
-  padding: 10px;
-  position: absolute;
-  right: 0;
-}
-#mobile-menu-toggle:hover {
-  color: rgb(212,212,212);
-  cursor: pointer;
-}
 
 nav {
   /* Center the nav bar */
   margin: 0 auto;
 }
 nav ul {
-  display: none;
+  display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
   margin: 0;
   padding: 0;
-}
-.visible {
-  display: flex;
 }
 nav li {
   flex: 1 100%;
@@ -227,6 +213,26 @@ nav li.highlight:nth-of-type(2n+1) a {
 }
 nav li.highlight:nth-of-type(2n+2) a {
   background-color: rgb(215,18,139);
+}
+
+/* ===Top navigation=== */
+#mobile-menu-toggle {
+  color: rgb(255,255,255);
+  font-size: 1.5em;
+  padding: 10px;
+  position: absolute;
+  right: 0;
+}
+#mobile-menu-toggle:hover {
+  color: rgb(212,212,212);
+  cursor: pointer;
+}
+
+header nav ul {
+  display: none;
+}
+.visible {
+  display: flex;
 }
 
 /* 1.5. FOOTER
@@ -434,7 +440,6 @@ footer li:last-child:after {
   }
 
   nav ul {
-    display: flex;
     flex-flow: row wrap;
     justify-content: flex-end;
     margin: 0;
@@ -448,6 +453,11 @@ footer li:last-child:after {
   /* ===Highlighted nav items=== */
   nav li.highlight a {
     border-radius: 5px;
+  }
+  
+  /* ===Top navigation=== */
+  header nav ul {
+    display: flex;
   }
 
   /* 2.4. HOME PAGE GALLERY
@@ -517,7 +527,6 @@ footer li:last-child:after {
   }
   .hero h1 {
     font-size: 3.5em;
-    white-space: pre-wrap;
   }
 
   /* 3.3. NAVIGATION
@@ -540,6 +549,11 @@ footer li:last-child:after {
   }
   nav li:last-of-type {
     margin: 0;
+  }
+
+  /* ===Top navigation===*/
+  header nav ul {
+    display: block;
   }
 
   /* 3.4. HOME PAGE GALLERY

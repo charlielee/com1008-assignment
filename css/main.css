@@ -251,12 +251,8 @@ nav li.highlight:nth-of-type(2n+2) a {
   color: rgb(212,212,212);
   cursor: pointer;
 }
-
-header nav ul {
+header nav ul.hidden {
   display: none;
-}
-.visible {
-  display: flex;
 }
 
 /* 1.5. FOOTER
@@ -464,9 +460,6 @@ footer li:last-child:after {
 
   /* 2.3. NAVIGATION
      -------------------------------- */
-  #mobile-menu-toggle {
-    display: none;
-  }
 
   nav ul {
     flex-flow: row wrap;
@@ -483,9 +476,13 @@ footer li:last-child:after {
   nav li.highlight a {
     border-radius: 5px;
   }
-  
+
   /* ===Top navigation=== */
-  header nav ul {
+  #mobile-menu-toggle {
+    display: none;
+  }
+
+  header nav ul.hidden {
     display: flex;
   }
 
@@ -570,7 +567,7 @@ footer li:last-child:after {
     flex-flow: row wrap;
     max-width: 900px;
   }
-  nav ul {
+  nav ul, header nav ul.hidden {
     display: block;
     flex: 1;
     text-align: right;

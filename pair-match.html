@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+  Pair Match game for COM1008 Assignment
+  Author: Charles Lee
+  Created: 11/12/16
+  Last updated: 11/12/16
+-->
+<html lang="en">
+
+<head>
+  <title>Pair Match - TeaBrew Games</title>
+  <meta charset="UTF-8">
+  <meta name="author" content="Charles Lee">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Roboto" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/pair-match.css">
+  <link rel="icon" href="img/favicon.png">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="mobile-menu-toggle"><i class="fa fa-bars"></i></div>
+      <div id="logo">
+        <a href="index.html"><span class="fa fa-coffee" ></span>TeaBrew</a>
+      </div>
+      <ul id="menu-list">
+        <li class="highlight"><a href="games.html">Games</a></li>
+        <li class="highlight"><a href="reviews.html">Reviews</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <header id="pair-match">
+      <h1>Pair Match</h1>
+    </header>
+
+    <div>
+      <article>
+        <canvas id="game-area" height="500" width="500"></canvas>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <ul>
+      <li>&copy; 2016 TeaBrew Games</li>
+      <li><a href="#">Accessibility</a></li>
+    </ul>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/pair-match.js"></script>
+</body>
+
+</html>

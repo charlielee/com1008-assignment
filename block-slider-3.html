@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/pair-match.css">
+  <link rel="stylesheet" href="css/block-slider-3.css">
   <link rel="icon" href="img/favicon.png">
 </head>
 
@@ -43,8 +43,20 @@
     </header>
 
     <div>
-      <article>
-        <canvas id="game-area" height="500" width="500"></canvas>
+      <article class="with-sidebar">
+        <section>
+          <canvas id="game-area" height="500" width="500"></canvas>
+        </section>
+        <aside>
+          <h3>High score: <span id="high-score">50</span></h3>
+          <h3>Number of moves: <span id="no-of-moves">50</span></h3>
+          <button onclick="init()">Start over</button>
+          <ul>
+            <li>Created: December 11th 2016</li>
+            <li>Author: <a href="about.html#barry-mcbarryface">Barry McBarryface</a></li>
+          </ul>
+          <p>BlockSlider 3 is the classic sliding puzzle game brought into the 21st century with vibrant graphics and endless fun.</p>
+        </aside>
       </article>
     </div>
   </main>
@@ -57,7 +69,7 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/pair-match.js"></script>
+  <script src="js/block-slider-3.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,1 @@
+XCOPY . \\stustore.dcs.shef.ac.uk\mypublic_html\1008 /E /I /Y

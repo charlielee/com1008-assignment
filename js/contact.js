@@ -1,3 +1,9 @@
+/*!
+  JavaScript for Contact Page
+  Author: Charles Lee
+  Created: 04/12/16
+*/
+
 var lastSubmission = document.getElementById("last-submission"),
     contactForm    = document.getElementById("contact-form"),
     submitButton   = document.getElementById("submit"),

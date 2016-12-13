@@ -1,3 +1,9 @@
+/*!
+  JavaScript used on the entire website
+  Author: Charles Lee
+  Created: 03/12/16
+*/
+
 var mobileToggle = document.getElementById("mobile-menu-toggle"),
     menuList     = document.getElementById("menu-list");
 

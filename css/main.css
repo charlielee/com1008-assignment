@@ -394,16 +394,16 @@ footer li:last-child:after {
 
 /* ===GAMES=== */
 #block-slider-3 {
-  background-image: url("../img/tea1.jpg");
+  background-image: url("../img/block-slider-3.png");
 }
-#block-slider-3 {
-  background-image: url("../img/tea2.jpg");
+#pair-match {
+  background-image: url("../img/pair-match.png");
 }
 #spot-difference {
   background-image: url("../img/spot-the-difference.png");
 }
 #tic-tac-toe {
-  background-image: url("../img/tea1.jpg");
+  background-image: url("../img/tic-tac-toe.jpg");
 }
 #cat-teapot {
   background-image: url("../img/cat.jpg");

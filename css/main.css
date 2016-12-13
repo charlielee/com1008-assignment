@@ -50,6 +50,35 @@ a, a:visited {
 }
 a:hover { color: rgb(4,81,94); }
 
+/* ===Buttons=== */
+.button {
+  background-color: rgb(0,171,202);
+  border-radius: 10px;
+  color: rgb(255,255,255);
+  float: right;
+  margin: 10px 0 10px 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+.button:visited {
+  color: rgb(255,255,255);
+}
+.button:hover {
+  box-shadow: 0 0 10px 3px rgb(0,171,202);
+  color: rgb(255,255,255);
+}
+.button::after {
+  content: " >";
+  vertical-align: middle;
+}
+
+.button:not([href]):hover {
+  cursor: not-allowed;
+}
+.button:not([href])::after {
+  content: "";
+}
+
 /* ===Headings=== */
 h1, h2 {
   font-family: "Montserrat", sans-serif;
@@ -101,11 +130,15 @@ main div {
 article {
   margin: 0 auto;
   padding: 0 10px;
+  position: relative;
 }
 article img {
   box-shadow: 1px 0 10px 1px rgb(85,98,112);
   margin: 1em 0;
   width: 100%;
+}
+section {
+  position: relative;
 }
 
 /* ===Articles with ".item" alternate between 3 different color accents=== */

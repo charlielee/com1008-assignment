@@ -8,6 +8,9 @@
 var srcDir   = "img/block-slider-3/",
     srcList  = ["1.jpg", "2.png", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
 
+// Reset button
+var resetButton = document.getElementById("start-over");
+
 // Game area canvas
 var canvas  = document.getElementById("game-area"),
     context = canvas.getContext("2d");
@@ -248,6 +251,8 @@ function init() {
   createImage(srcList[i]);
 }
 
+// Add event listeners
+resetButton.addEventListener("click", init);
 canvas.addEventListener("click", selectCell);
 
 init();

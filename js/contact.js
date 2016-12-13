@@ -10,9 +10,9 @@ var lastSubmission = document.getElementById("last-submission"),
     date           = new Date(),
     curTime        = date.toLocaleTimeString().substr(0, 5);
 
-submitButton.addEventListener("click", addSubmission);
 
 function addSubmission() {
+  // Check form has been filled in correctly
   if (contactForm.checkValidity()) {
     sessionStorage.setItem("last_submission", curTime);
     console.info("Successful form submission");
@@ -41,3 +41,4 @@ function getLastSubmission() {
 }
 
 window.onload = getLastSubmission;
+submitButton.addEventListener("click", addSubmission);

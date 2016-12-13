@@ -4,22 +4,29 @@
   Created: 11/11/16
 */
 
-var gameArea = document.getElementById("game-area"),
-    context  = gameArea.getContext("2d"),
-    srcDir   = "img/block-slider-3/",
+// Images to use
+var srcDir   = "img/block-slider-3/",
     srcList  = ["1.jpg", "2.png", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg"];
 
+// Game area canvas
+var canvas  = document.getElementById("game-area"),
+    context = canvas.getContext("2d");
+
+const CANVAS_WIDTH  = canvas.width,
+      CANVAS_HEIGHT = canvas.height;
+
 // Game area grid
-var GRID_WIDTH       = 3,
-    GRID_HEIGHT      = 3,
-    GRID_TOTAL       = GRID_WIDTH * GRID_HEIGHT,
-    GRID_CELL_WIDTH  = gameArea.width/GRID_WIDTH,
-    GRID_CELL_HEIGHT = gameArea.height/GRID_HEIGHT;
+const GRID_WIDTH       = 3,
+      GRID_HEIGHT      = 3,
+      GRID_TOTAL       = GRID_WIDTH * GRID_HEIGHT,
+      GRID_CELL_WIDTH  = canvas.width/GRID_WIDTH,
+      GRID_CELL_HEIGHT = canvas.height/GRID_HEIGHT;
 
 // Gameplay state
 var currentBoard = [],
-    blankCell    = 0,
-    curImage;
+    blankCell    = {},
+    curImage,
+    noOfMoves    = 0;
 
 /**
  * Creates an image element for a file listed in "srcList"
@@ -27,7 +34,7 @@ var currentBoard = [],
 function createImage(file) {
   // Create image element
   curImage = new Image();
-  curImage.src = srcDir + "test.png";
+  curImage.src = srcDir + file;
 
   curImage.onload = function() {
     // On load split the image into sections
@@ -65,13 +72,20 @@ function splitImage(image) {
   }
 
   // Blank one random cell of grid
-  blankCell = Math.floor(Math.random() * GRID_TOTAL)+1;
+  var blankCellNo = Math.floor(Math.random() * GRID_TOTAL)+1;
 
   var blankImage = new Image();
   blankImage.src = srcDir + "blank.png";
 
   blankImage.onload = function() {
-    drawTile(blankImage, 1, blankCell);
+    drawTile(blankImage, 1, blankCellNo);
+
+    blankCell.j    = getGridX(blankCellNo);
+    blankCell.i    = getGridY(blankCellNo);
+    blankCell.pos  = getPosition(blankCell.j, blankCell.i);
+    blankCell.img  = blankImage;
+    // The part of the image the blank cell has replaced
+    blankCell.orig = currentBoard[blankCellNo-1];
   };
 }
 
@@ -118,10 +132,113 @@ function getGridY(position) {
 }
 
 /**
- * Move a tile from one position in the grid to another
+ * Get the chronological position of of a grid cell
  */
-function swapTile(posFrom, posTo) {
+function getPosition(j, i) {
+  return j + (i-1)*GRID_WIDTH;
+}
 
+/**
+ * Get the position of the mouse within the canvas
+ * (from COM1008 lecture 15)
+ */
+function getMouseXY(e) {
+  var boundingRect = canvas.getBoundingClientRect(),
+      offsetX      = boundingRect.left,
+      offsetY      = boundingRect.top,
+      w            = (boundingRect.width-canvas.width)/2,
+      h            = (boundingRect.height-canvas.height)/2;
+
+  offsetX += w;
+  offsetY += h;
+
+  var mx = Math.round(e.clientX-offsetX),
+      my = Math.round(e.clientY-offsetY);
+
+  // Return object with mouse coordinates
+  return {x: mx, y: my};
+}
+
+/**
+ * Check if mouse is inside a grid cell
+ * (from COM1008 lecture 15)
+ */
+function whichGridCell(x, y) {
+  if (x<0) x = 0;
+  if (y<0) y = 0;
+  if (x>=CANVAS_WIDTH) x = CANVAS_WIDTH-1;
+  if (y>=CANVAS_HEIGHT) y = CANVAS_HEIGHT-1;
+  var gx = Math.floor(x/GRID_CELL_WIDTH)+1;
+  var gy = Math.floor(y/GRID_CELL_HEIGHT)+1;
+  // need to be careful here
+  // x, y on screen is j,i in grid
+  return {j: gx, i: gy};
+}
+
+/**
+ * When a grid cell is selected
+ */
+function selectCell(e) {
+  // Get the coordinates of the grid cell
+  var pos = getMouseXY(e),
+      gridCell = whichGridCell(pos.x, pos.y),
+      chronPos = getPosition(gridCell.j, gridCell.i),
+      section = currentBoard[chronPos-1];
+
+  // Check if selected cell is next to blank cell
+  if (gridCell.j == blankCell.j && gridCell.i != blankCell.i ||
+      gridCell.j != blankCell.j && gridCell.i == blankCell.i) {
+    // Swap positions of blank cell and the selected cell
+    drawTile(curImage, currentBoard[chronPos-1], blankCell.pos);
+    drawTile(blankCell.img, 1, chronPos);
+
+    // Update position of blank cell with value of selected cell
+    currentBoard[blankCell.pos-1] = section;
+    // Update position of selected cell with blank cell original value
+    currentBoard[chronPos-1] = blankCell.orig;
+
+    // Update blank cell position
+    blankCell.j = gridCell.j;
+    blankCell.i = gridCell.i;
+    blankCell.pos = getPosition(blankCell.j, blankCell.i);
+
+    // Check if board completed
+    if(isFinished()) {
+      gameComplete();
+    } else {
+      updateScore();
+    }
+  }
+}
+
+function isFinished() {
+  var finishedTiles = 0;
+
+  for (var i=0; i<GRID_TOTAL; i++) {
+    if (currentBoard[i] == i+1) {
+      finishedTiles++;
+    }
+  }
+
+  if (finishedTiles == GRID_TOTAL) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function updateScore() {
+  var scoreDisplay = document.getElementById("no-of-moves");
+  noOfMoves++
+  scoreDisplay.textContent = noOfMoves;
+}
+
+function gameComplete() {
+  // Fill in the blanked out tile
+  drawTile(curImage, blankCell.orig, blankCell.pos);
+  context.font = "3em Verdana";
+  context.fillStyle = "rgb(255,255,0)";
+  context.fillText("Puzzle complete!", CANVAS_WIDTH/8, CANVAS_HEIGHT/2);
 }
 
 function init() {
@@ -131,76 +248,6 @@ function init() {
   createImage(srcList[i]);
 }
 
+canvas.addEventListener("click", selectCell);
+
 init();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var request = 0;
-
-function nextFrame() {
-  if (request > 100) {
-    cancelAnimationFrame(request);
-  } else {
-    request = requestAnimationFrame(nextFrame);
-  }
-  if (request%4 == 0) {
-    splitImage(curImage);
-  }
-}
-
-
-
-function gridCell(parent, num) {
-  this.cellX = function() {
-    if (id%GRID_WIDTH == 0) {
-      return GRID_WIDTH;
-    } else {
-      return id%GRID_WIDTH;
-    }
-  };
-  this.cellY = function() {
-    return Math.ceil(id/GRID_HEIGHT);
-  }
-  this.posX = function() {
-    console.log(parent.width/GRID_WIDTH * (this.cellX - 1));
-    return parent.width/GRID_WIDTH * (this.cellX - 1);
-  };
-  this.posY = function() {
-    return parent.height/GRID_HEIGHT * (this.cellY - 1);
-  };
-  this.width = function() {
-    return parent.width/GRID_WIDTH;
-  };
-  this.height = function() {
-    return parent.height/GRID_HEIGHT;
-  };
-}
-
-
-
-function test(a, b) {
-  // Create image element
-  var picture = new Image();
-  picture.src = srcDir + srcList[0];
-
-  // Split the image into sections when the canvas has loaded
-  picture.onload = function() {
-    drawTile(picture, a, b);
-  };
-}
